@@ -9,9 +9,9 @@ const BookForm = () => {
         <input type="text" name="title" id="title" />
         Title:
       </label>
-      <label>
+      <label htmlFor="categories" id="categoriesLabel">
         Pick your book category:
-        <select>
+        <select id="categories">
           {cat.map(category => (
             <option key={category} value={category}>
               {category}
