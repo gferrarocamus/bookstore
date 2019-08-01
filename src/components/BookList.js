@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const BookList = (props) => {
   const { books } = props;
@@ -20,6 +21,10 @@ const BookList = (props) => {
       </tbody>
     </table>
   );
+};
+
+BookList.propTypes = {
+  books: PropTypes.arrayOf[PropTypes.object].isRequired,
 };
 
 export default BookList;

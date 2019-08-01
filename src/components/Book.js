@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Book = (props) => {
   const { id, type, category } = props;
@@ -9,6 +10,12 @@ const Book = (props) => {
       <td>{category}</td>
     </tr>
   );
+};
+
+Book.propTypes = {
+  id: PropTypes.number.isRequired,
+  type: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default Book;
