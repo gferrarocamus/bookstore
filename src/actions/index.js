@@ -1,11 +1,11 @@
-const createBook = (book) => {
-  'CREATE_BOOK',
-  book;
-};
+const createBook = book => ({
+  types: 'CREATE_BOOK',
+  book,
+});
 
-const removeBook = (index) => {
-  'REMOVE_BOOK',
-  index;
-};
+const removeBook = index => ({
+  types: 'REMOVE_BOOK',
+  index,
+});
 
 export { createBook, removeBook };

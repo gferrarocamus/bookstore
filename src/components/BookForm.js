@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import createBook from '../actions/index';
+
+const mapDispatchToProps = dispatch => ({
+  createBook: () => {
+    dispatch(createBook());
+  },
+});
 
 const BookForm = () => {
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
+  
   const cat = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
   return (
@@ -23,4 +34,4 @@ const BookForm = () => {
   );
 };
 
-export default BookForm;
+export default connect(mapDispatchToProps)(BookForm);
