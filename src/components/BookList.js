@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BookList = (props) => {
-  const { books } = props;
+const BookList = books => {
+  console.log(books.books[0]);
   return (
     <table>
       <tbody>
@@ -11,7 +11,7 @@ const BookList = (props) => {
           <th>Title</th>
           <th>Category</th>
         </tr>
-        {books.map((book, index) => (
+        {books.books.map((book, index) => (
           <tr key={index}>
             <td>{book.id}</td>
             <td>{book.title}</td>
@@ -24,7 +24,7 @@ const BookList = (props) => {
 };
 
 BookList.propTypes = {
-  books: PropTypes.arrayOf[PropTypes.object].isRequired,
+  books: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default BookList;
