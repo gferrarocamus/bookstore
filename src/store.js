@@ -19,6 +19,7 @@ const initialState = {
       category: 'History',
     },
   ],
+  bookCount: 0,
 };
 
 const store = createStore(mainReducer, initialState);

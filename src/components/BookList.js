@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BookList = books => {
-  console.log(books.books[0]);
+const BookList = props => {
   return (
     <table>
       <tbody>
@@ -11,7 +10,7 @@ const BookList = books => {
           <th>Title</th>
           <th>Category</th>
         </tr>
-        {books.books.map((book, index) => (
+        {props.books.map((book, index) => (
           <tr key={index}>
             <td>{book.id}</td>
             <td>{book.title}</td>

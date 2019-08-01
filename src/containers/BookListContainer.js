@@ -3,9 +3,12 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import BookList from '../components/BookList';
 
-const mapStateToProps = state => state;
+const mapStateToProps = state => {
+  const { books, bookCount } = state;
+  return { books, bookCount };
+};
 
-const BookListContainer = state => <BookList books={state.books} />;
+const BookListContainer = ({ books }) => <BookList books={books} />;
 
 BookListContainer.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
