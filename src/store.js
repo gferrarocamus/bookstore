@@ -1,4 +1,5 @@
 import { createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import mainReducer from './reducers/index';
 
 const initialState = {
@@ -22,6 +23,6 @@ const initialState = {
   bookCount: 0,
 };
 
-const store = createStore(mainReducer, initialState);
+const store = createStore(mainReducer, initialState, composeWithDevTools());
 
 export default store;
