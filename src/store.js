@@ -5,22 +5,21 @@ import mainReducer from './reducers/index';
 const initialState = {
   books: [
     {
-      id: Math.floor(Math.random() * 90 + 10),
+      id: 1,
       title: 'The Great Gatsby',
       category: 'Action',
     },
     {
-      id: Math.floor(Math.random() * 90 + 10),
+      id: 2,
       title: 'The Grapes of Wrath',
       category: 'Action',
     },
     {
-      id: Math.floor(Math.random() * 90 + 10),
+      id: 3,
       title: 'Nineteen Eighty-Four',
       category: 'History',
     },
   ],
-  bookCount: 0,
 };
 
 const store = createStore(mainReducer, initialState, composeWithDevTools());
