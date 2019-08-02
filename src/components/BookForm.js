@@ -71,7 +71,9 @@ const BookForm = props => {
           ))}
         </select>
       </label>
-      <button type="submit">Submit</button>
+      <button className="ADD-BOOK" type="submit">
+        Add Book
+      </button>
     </form>
   );
 };
