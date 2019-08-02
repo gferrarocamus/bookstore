@@ -71,7 +71,7 @@ const BookForm = props => {
           ))}
         </select>
       </label>
-      <button className="ADD-BOOK" type="submit">
+      <button className="blue-button form-button bold" type="submit">
         Add Book
       </button>
     </form>

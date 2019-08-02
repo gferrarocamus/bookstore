@@ -6,10 +6,12 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div>
+    <div className="app-container">
       <Navbar />
-      <BookListContainer />
-      <BookForm />
+      <div className="main-container">
+        <BookListContainer />
+        <BookForm />
+      </div>
     </div>
   );
 }
