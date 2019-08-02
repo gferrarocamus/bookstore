@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import Book from './Book';
 
 const BookList = props => {
+  const { deleteBook, books } = props;
   const handleRemoveBook = book => {
-    props.deleteBook(book);
+    deleteBook(book);
   };
 
   return (
@@ -16,13 +17,15 @@ const BookList = props => {
           <th>Category</th>
           <th />
         </tr>
-        {props.books.map(book => (
+        {books.map(book => (
           <Book
             key={book.id}
             id={book.id}
             title={book.title}
             category={book.category}
-            removeBook={handleRemoveBook(book)}
+            removeBook={() => {
+              handleRemoveBook(book);
+            }}
           />
         ))}
       </tbody>
@@ -32,6 +35,7 @@ const BookList = props => {
 
 BookList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
+  deleteBook: PropTypes.func.isRequired,
 };
 
 export default BookList;

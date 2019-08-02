@@ -11,7 +11,7 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => {
   const { books } = state;
-  return { totalBook: books.length };
+  return { lastID: books[books.length - 1].id };
 };
 
 const BookForm = props => {
@@ -31,7 +31,7 @@ const BookForm = props => {
   const handleInputChange = e => setTitle(e.target.value);
   const handleSelectChange = e => setCategory(e.target.value);
 
-  const getId = () => props.totalBook + 1;
+  const getId = () => props.lastID + 1;
 
   const bookFactory = (bookTitle, bookCategory) => ({
     id: getId(),
@@ -76,7 +76,7 @@ const BookForm = props => {
 
 BookForm.propTypes = {
   addBook: PropTypes.func.isRequired,
-  totalBook: PropTypes.number.isRequired,
+  lastID: PropTypes.number.isRequired,
 };
 
 export default connect(

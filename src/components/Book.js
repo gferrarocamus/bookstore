@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Book = props => {
-  const { id, title, category, removeBook } = props;
+  const {
+    id, title, category, removeBook,
+  } = props;
   return (
     <tr>
       <td>{id}</td>

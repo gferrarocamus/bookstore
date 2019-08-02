@@ -9,10 +9,9 @@ const mapStateToProps = state => {
   return { books };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = dispatch => ({
   deleteBook: book => {
-    console.log(ownProps.books)
-    dispatch(removeBook(ownProps.books.indexOf(book)));
+    dispatch(removeBook(book.id));
   },
 });
 
@@ -22,9 +21,10 @@ const BookListContainer = ({ books, deleteBook }) => (
 
 BookListContainer.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
+  deleteBook: PropTypes.func.isRequired,
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(BookListContainer);

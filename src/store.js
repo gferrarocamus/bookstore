@@ -5,17 +5,17 @@ import mainReducer from './reducers/index';
 const initialState = {
   books: [
     {
-      id: 1,
+      id: 1000,
       title: 'The Great Gatsby',
       category: 'Action',
     },
     {
-      id: 2,
+      id: 1001,
       title: 'The Grapes of Wrath',
       category: 'Action',
     },
     {
-      id: 3,
+      id: 1002,
       title: 'Nineteen Eighty-Four',
       category: 'History',
     },

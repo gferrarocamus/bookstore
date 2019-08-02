@@ -5,8 +5,14 @@ const books = (state = {}, action) => {
       newStateCreate.push(action.book);
       return newStateCreate;
     case 'REMOVE_BOOK':
-      const newStateRemove = Object.assign({}, state);
-      newStateRemove.books.splice(action.index, 1);
+      const newStateRemove = [...state];
+      const index = newStateRemove.reduce((acc, current, index, arr) => {
+        if (current.id === action.id) {
+          acc = index;
+        }
+        return acc;
+      }, 0);
+      newStateRemove.splice(index, 1);
       return newStateRemove;
     default:
       return state;
