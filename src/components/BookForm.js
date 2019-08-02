@@ -11,7 +11,8 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => {
   const { books } = state;
-  return { lastID: books[books.length - 1].id };
+  const lastID = books.length - 1 < 0 ? 0 : books[books.length - 1].id;
+  return { lastID };
 };
 
 const BookForm = props => {
@@ -61,7 +62,7 @@ const BookForm = props => {
       </label>
       <label htmlFor="categories" id="categoriesLabel">
         Pick your book category:
-        <select id="categories" value={category} onChange={handleSelectChange}>
+        <select id="categories" onChange={handleSelectChange}>
           {cat.map(c => (
             <option key={c} value={c}>
               {c}
@@ -81,5 +82,5 @@ BookForm.propTypes = {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(BookForm);

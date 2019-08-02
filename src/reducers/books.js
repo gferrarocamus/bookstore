@@ -1,4 +1,4 @@
-const books = (state = {}, action) => {
+const books = (state = [], action) => {
   switch (action.type) {
     case 'CREATE_BOOK':
       const newStateCreate = [...state];

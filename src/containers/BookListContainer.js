@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import BookList from '../components/BookList';
-import { removeBook } from '../actions/index';
+import { removeBook, changeFilter } from '../actions/index';
 
 const mapStateToProps = state => {
   const { books } = state;
@@ -13,18 +13,26 @@ const mapDispatchToProps = dispatch => ({
   deleteBook: book => {
     dispatch(removeBook(book.id));
   },
+  handleFilterChange: filter => {
+    dispatch(changeFilter(filter));
+  },
 });
 
-const BookListContainer = ({ books, deleteBook }) => (
-  <BookList books={books} deleteBook={deleteBook} />
+const BookListContainer = ({ books, deleteBook, handleFilterChange }) => (
+  <BookList
+    books={books}
+    deleteBook={deleteBook}
+    handleFilterChange={handleFilterChange}
+  />
 );
 
 BookListContainer.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
   deleteBook: PropTypes.func.isRequired,
+  handleFilterChange: PropTypes.func.isRequired,
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(BookListContainer);
