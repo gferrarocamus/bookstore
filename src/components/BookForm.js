@@ -58,6 +58,7 @@ const BookForm = props => {
           id="title"
           onChange={handleInputChange}
           value={title}
+          required
         />
       </label>
       <label htmlFor="categories" id="categoriesLabel">
@@ -82,5 +83,5 @@ BookForm.propTypes = {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(BookForm);

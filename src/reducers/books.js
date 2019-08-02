@@ -1,19 +1,19 @@
 const books = (state = [], action) => {
+  const newState = [...state];
   switch (action.type) {
     case 'CREATE_BOOK':
-      const newStateCreate = [...state];
-      newStateCreate.push(action.book);
-      return newStateCreate;
-    case 'REMOVE_BOOK':
-      const newStateRemove = [...state];
-      const index = newStateRemove.reduce((acc, current, index, arr) => {
+      newState.push(action.book);
+      return newState;
+    case 'REMOVE_BOOK': {
+      const index = newState.reduce((acc, current, i) => {
         if (current.id === action.id) {
-          acc = index;
+          acc = i;
         }
         return acc;
       }, 0);
-      newStateRemove.splice(index, 1);
-      return newStateRemove;
+      newState.splice(index, 1);
+      return newState;
+    }
     default:
       return state;
   }

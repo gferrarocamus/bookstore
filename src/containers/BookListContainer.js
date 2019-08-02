@@ -6,6 +6,8 @@ import { removeBook, changeFilter } from '../actions/index';
 
 const mapStateToProps = state => {
   const { books } = state;
+  const filteredBooks = books.filter(book => book.category === state.filter);
+  if (state.filter !== '') return { books: filteredBooks };
   return { books };
 };
 
@@ -19,11 +21,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const BookListContainer = ({ books, deleteBook, handleFilterChange }) => (
-  <BookList
-    books={books}
-    deleteBook={deleteBook}
-    handleFilterChange={handleFilterChange}
-  />
+  <BookList books={books} deleteBook={deleteBook} handleFilterChange={handleFilterChange} />
 );
 
 BookListContainer.propTypes = {
@@ -34,5 +32,5 @@ BookListContainer.propTypes = {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(BookListContainer);
