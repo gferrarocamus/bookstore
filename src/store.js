@@ -20,6 +20,7 @@ const initialState = {
       category: 'History',
     },
   ],
+  filter: '',
 };
 
 const store = createStore(mainReducer, initialState, composeWithDevTools());

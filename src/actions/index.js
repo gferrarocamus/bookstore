@@ -8,4 +8,9 @@ export const removeBook = id => ({
   id,
 });
 
+export const changeFilter = filter => ({
+  type: 'CHANGE_FILTER',
+  filter,
+});
+
 export default createBook;
