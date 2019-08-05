@@ -12,7 +12,7 @@ const initialState = [
   {
     id: 1002,
     title: 'Nineteen Eighty-Four',
-    category: 'History',
+    category: 'Sci-Fi',
   },
 ];
 

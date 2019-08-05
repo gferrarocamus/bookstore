@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/style.css';
-import BookListContainer from './containers/BookListContainer';
+import BookList from './components/BookList';
 import BookForm from './components/BookForm';
 import Navbar from './components/Navbar';
 
@@ -9,7 +9,7 @@ function App() {
     <div className="app-container">
       <Navbar />
       <div className="main-container">
-        <BookListContainer />
+        <BookList />
         <BookForm />
       </div>
     </div>

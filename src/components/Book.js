@@ -11,7 +11,14 @@ const Book = props => {
       <td className="book-category">{category}</td>
       <td className="book-title">{title}</td>
       <td>
-        <button className="blue-button remove-button light" type="button" onClick={removeBook}>
+        <button className="blue-button remove-button light" type="button" onClick={
+          () => {
+            console.log(removeBook)
+
+            removeBook(id);
+          }
+        }
+          >
           Remove
         </button>
       </td>
