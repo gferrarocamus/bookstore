@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBook, changeFilter } from '../actions/index';
+import { removeBook, changeFilter } from '../redux/actions/index';
 import CategoryFilter from './CategoryFilter';
 import Book from './Book';
 
 const mapStateToProps = state => ({
-  books: state.books.filter(book => (state.filter === '' ? true : book.category === state.filter)),
+  books: state.books.filter(book =>
+    state.filter === '' ? true : book.category === state.filter,
+  ),
 });
 
 const BookList = ({ books, deleteBook, handleFilterChange }) => (

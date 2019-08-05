@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { changeFilter } from '../actions/index';
+import { changeFilter } from '../redux/actions/index';
 
 const CategoryFilter = ({ updateFilter }) => {
   const cat = [

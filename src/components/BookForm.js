@@ -1,19 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { createBook } from '../actions/index';
-
-// const mapDispatchToProps = dispatch => ({
-//   addBook: book => {
-//     dispatch(createBook(book));
-//   },
-// });
-
-// const mapStateToProps = state => {
-//   const { books } = state;
-//   const lastID = books.length - 1 < 0 ? 0 : books[books.length - 1].id;
-//   return { lastID };
-// };
+import { createBook } from '../redux/actions/index';
 
 const BookForm = ({ addBook }) => {
   const [title, setTitle] = useState('');
@@ -32,18 +20,9 @@ const BookForm = ({ addBook }) => {
   const handleInputChange = e => setTitle(e.target.value);
   const handleSelectChange = e => setCategory(e.target.value);
 
-  // const getId = () => props.lastID + 1;
-
-  // const bookFactory = (bookTitle, bookCategory) => ({
-  //   id: getId(),
-  //   title: bookTitle,
-  //   category: bookCategory,
-  // });
-
   const handleSubmit = e => {
     e.preventDefault();
 
-    // props.addBook(bookFactory(title, category));
     addBook(title, category);
     setTitle('');
     setCategory('Action');
@@ -81,7 +60,6 @@ const BookForm = ({ addBook }) => {
 
 BookForm.propTypes = {
   addBook: PropTypes.func.isRequired,
-  // lastID: PropTypes.number.isRequired,
 };
 
 export default connect(
