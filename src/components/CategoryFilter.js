@@ -1,7 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { changeFilter } from '../actions/index';
 
-const CategoryFilter = props => {
-  const { handleFilterChange } = props;
+const CategoryFilter = ({ updateFilter }) => {
   const cat = [
     'All',
     'Action',
@@ -20,7 +22,7 @@ const CategoryFilter = props => {
         <select
           id="filter"
           onChange={e => {
-            handleFilterChange(e.target.value);
+            updateFilter(e.target.value);
           }}
         >
           {cat.map(c => (
@@ -34,4 +36,11 @@ const CategoryFilter = props => {
   );
 };
 
-export default CategoryFilter;
+CategoryFilter.propTypes = {
+  updateFilter: PropTypes.func.isRequired,
+};
+
+export default connect(
+  null,
+  { updateFilter: changeFilter },
+)(CategoryFilter);
