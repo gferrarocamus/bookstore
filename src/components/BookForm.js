@@ -3,19 +3,19 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { createBook } from '../actions/index';
 
-const mapDispatchToProps = dispatch => ({
-  addBook: book => {
-    dispatch(createBook(book));
-  },
-});
+// const mapDispatchToProps = dispatch => ({
+//   addBook: book => {
+//     dispatch(createBook(book));
+//   },
+// });
 
-const mapStateToProps = state => {
-  const { books } = state;
-  const lastID = books.length - 1 < 0 ? 0 : books[books.length - 1].id;
-  return { lastID };
-};
+// const mapStateToProps = state => {
+//   const { books } = state;
+//   const lastID = books.length - 1 < 0 ? 0 : books[books.length - 1].id;
+//   return { lastID };
+// };
 
-const BookForm = props => {
+const BookForm = ({ addBook }) => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('Action');
 
@@ -32,18 +32,19 @@ const BookForm = props => {
   const handleInputChange = e => setTitle(e.target.value);
   const handleSelectChange = e => setCategory(e.target.value);
 
-  const getId = () => props.lastID + 1;
+  // const getId = () => props.lastID + 1;
 
-  const bookFactory = (bookTitle, bookCategory) => ({
-    id: getId(),
-    title: bookTitle,
-    category: bookCategory,
-  });
+  // const bookFactory = (bookTitle, bookCategory) => ({
+  //   id: getId(),
+  //   title: bookTitle,
+  //   category: bookCategory,
+  // });
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    props.addBook(bookFactory(title, category));
+    // props.addBook(bookFactory(title, category));
+    addBook(title, category);
     setTitle('');
     setCategory('Action');
   };
@@ -80,10 +81,10 @@ const BookForm = props => {
 
 BookForm.propTypes = {
   addBook: PropTypes.func.isRequired,
-  lastID: PropTypes.number.isRequired,
+  // lastID: PropTypes.number.isRequired,
 };
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
+  null,
+  { addBook: createBook },
 )(BookForm);

@@ -11,14 +11,11 @@ const Book = props => {
       <td className="book-category">{category}</td>
       <td className="book-title">{title}</td>
       <td>
-        <button className="blue-button remove-button light" type="button" onClick={
-          () => {
-            console.log(removeBook)
-
-            removeBook(id);
-          }
-        }
-          >
+        <button
+          className="blue-button remove-button light"
+          type="button"
+          onClick={() => { removeBook(id); }}
+        >
           Remove
         </button>
       </td>
@@ -27,7 +24,7 @@ const Book = props => {
 };
 
 Book.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   removeBook: PropTypes.func.isRequired,

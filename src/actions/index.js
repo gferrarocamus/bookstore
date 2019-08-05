@@ -1,6 +1,7 @@
-export const createBook = book => ({
+export const createBook = (title, category) => ({
   type: 'CREATE_BOOK',
-  book,
+  title,
+  category,
 });
 
 export const removeBook = id => ({
