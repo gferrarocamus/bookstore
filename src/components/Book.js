@@ -7,7 +7,6 @@ const Book = props => {
   } = props;
   return (
     <tr>
-      <td className="book-id">{`#${id}`}</td>
       <td className="book-category">{category}</td>
       <td className="book-title">{title}</td>
       <td>

@@ -18,7 +18,7 @@ const CategoryFilter = ({ updateFilter }) => {
   return (
     <div>
       <label htmlFor="filter" id="filterLabel">
-        Filter Books By Category:
+        Filter By Category:
         <select
           id="filter"
           onChange={e => {
