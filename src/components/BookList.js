@@ -8,9 +8,17 @@ const BookList = props => {
 
   return (
     <div>
+      <br />
       <CategoryFilter handleFilterChange={handleFilterChange} />
-      <table className="books-table">
+      <br />
+      <table>
         <tbody>
+          <tr>
+            <th>Book ID</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th />
+          </tr>
           {books.map(book => (
             <Book
               key={book.id}

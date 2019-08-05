@@ -7,11 +7,11 @@ const Book = props => {
   } = props;
   return (
     <tr>
-      <td className="book-id">{`#${id}`}</td>
-      <td className="book-category">{category}</td>
-      <td className="book-title">{title}</td>
+      <td>{id}</td>
+      <td>{title}</td>
+      <td>{category}</td>
       <td>
-        <button className="blue-button remove-button light" type="button" onClick={removeBook}>
+        <button type="button" onClick={removeBook}>
           Remove
         </button>
       </td>

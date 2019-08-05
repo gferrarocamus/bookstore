@@ -62,7 +62,7 @@ const BookForm = props => {
         />
       </label>
       <label htmlFor="categories" id="categoriesLabel">
-        Category:
+        Pick your book category:
         <select id="categories" onChange={handleSelectChange}>
           {cat.map(c => (
             <option key={c} value={c}>
@@ -71,9 +71,7 @@ const BookForm = props => {
           ))}
         </select>
       </label>
-      <button className="blue-button form-button bold" type="submit">
-        Add Book
-      </button>
+      <button type="submit">Submit</button>
     </form>
   );
 };
