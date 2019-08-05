@@ -16,7 +16,7 @@ const CategoryFilter = props => {
   return (
     <div>
       <label htmlFor="filter" id="filterLabel">
-        Filter Books By Category:
+        Filter Books By Categorys:
         <select
           id="filter"
           onChange={e => {
