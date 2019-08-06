@@ -23,6 +23,7 @@ const BookList = ({ books, deleteBook, handleFilterChange }) => (
             title={book.title}
             author={book.author}
             category={book.category}
+            percentage={book.percentage}
             removeBook={deleteBook}
           />
         ))}

@@ -10,6 +10,7 @@ const books = (state = initialState, action) => {
         title: action.title,
         category: action.category,
         author: 'Unknown',
+        percentage: '0',
       };
       return [...state, book];
     }

@@ -2,17 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Book = props => {
-  const { id, title, author, category, removeBook } = props;
+  const { id, title, author, percentage, category, removeBook } = props;
   return (
     <tr>
       <td className="book-category">{category}</td>
       <td className="book-title">{title}</td>
       <td className="book-author">{author}</td>
-      <td className="action-link">
-        <button type="button" className="action-button">
+      <td className="action-buttons">
+        <button type="button" className="action-button no-click" disabled>
           Comments
-        </button>{' '}
-        |{' '}
+        </button>
+        {' | '}
         <button
           className="action-button"
           type="button"
@@ -21,13 +21,12 @@ const Book = props => {
           }}
         >
           Remove
-        </button>{' '}
-        |{' '}
-        <button className="action-button" type="button" href="#">
+        </button>
+        {' | '}
+        <button className="action-button no-click" type="button" href="#" disabled>
           Edit
         </button>
       </td>
-
       <td className="progress-container">
         <div className="circle">
           <div className="circle-wrap">
@@ -35,23 +34,22 @@ const Book = props => {
               <div className="mask full">
                 <div className="fill" />
               </div>
-
               <div className="mask half">
                 <div className="fill" />
               </div>
-
               <div className="inside-circle" />
             </div>
           </div>
         </div>
-        <div>
-          <h1>50%</h1>
+        <div className="percentage-completed">
+          <h1>
+            {`${percentage}%`}
+          </h1>
           <p>Completed</p>
         </div>
       </td>
-
-      <td>
-        <button className="blue-button remove-button light" type="button">
+      <td className="update-progresss-container">
+        <button className="blue-button update-button light" type="button">
           Update Progress
         </button>
       </td>
@@ -65,6 +63,7 @@ Book.propTypes = {
   author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   removeBook: PropTypes.func.isRequired,
+  percentage: PropTypes.func.isRequired,
 };
 
 export default Book;
