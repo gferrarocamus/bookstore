@@ -70,8 +70,10 @@ nav {
 }
 
 .book-category,
-.book-title {
+.book-title,
+.book-author {
   display: block;
+  max-width: 170px;
 }
 
 .book-category {
@@ -83,9 +85,6 @@ nav {
   letter-spacing: normal;
   color: #121212;
   margin-bottom: 5px;
-}
-
-.book-category {
   font-size: 14px;
   font-weight: bold;
 }
@@ -102,7 +101,6 @@ nav {
 }
 
 .book-author {
-  display: block;
   font-family: 'Roboto Slab', serif;
   font-size: 15px;
   font-weight: 300;
@@ -319,6 +317,27 @@ select {
   font-size: 2em;
 }
 
+@media (max-width: 1024px) {
+  .book-category,
+  .book-title,
+  .book-author {
+    max-width: 100%;
+  }
+
+  .circle-wrap {
+    margin: 12px auto;
+  }
+
+  .progress-container {
+    right: 10px;
+    top: 32px;
+  }
+
+  .update-button {
+    top: 130px;
+  }
+}
+
 @media (max-width: 880px) {
   body {
     padding: 30px;
@@ -356,6 +375,7 @@ select {
     display: block;
     margin-right: auto;
     margin-left: auto;
+    text-align: center;
   }
 }
 
