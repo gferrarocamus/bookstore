@@ -1,8 +1,8 @@
 import React from 'react';
-import './styles/style.css';
-import BookList from './components/BookList';
-import BookForm from './components/BookForm';
-import Navbar from './components/Navbar';
+import '../styles/style.css';
+import BookList from './BookList';
+import BookForm from './BookForm';
+import Navbar from './Navbar';
 
 function App() {
   return (
