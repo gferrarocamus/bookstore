@@ -5,7 +5,7 @@ const Book = props => {
   const {
     id, title, author, percentage, category, removeBook,
   } = props;
-  const percentageToDegrees = (percentage * 180 / 100);
+  const percentageToDegrees = Math.round(percentage * 1.8);
   const percentageStyle = {
     transform: `rotate(${percentageToDegrees}deg)`,
   };
@@ -44,7 +44,7 @@ const Book = props => {
                 style={percentageStyle}
               >
                 <div
-                  className="fill"
+                  className={percentage === '0' ? '' : 'fill'}
                   style={percentageStyle}
                 />
               </div>
@@ -52,7 +52,7 @@ const Book = props => {
                 className="mask half"
               >
                 <div
-                  className="fill"
+                  className={percentage === '0' ? '' : 'fill'}
                   style={percentageStyle}
                 />
               </div>

@@ -72,6 +72,10 @@ nav {
   padding: 32px 30px;
 }
 
+.details-container {
+  min-width: 190px;
+}
+
 .book-category,
 .book-title,
 .book-author {
@@ -125,7 +129,7 @@ nav {
   text-align: center;
   color: #ffffff;
   min-height: 45px;
-  min-width: 159px;
+  min-width: 173px;
   border-radius: 3px;
   background-color: #0290ff;
   text-transform: uppercase;
@@ -282,23 +286,27 @@ select {
 }
 
 .circle-wrap .circle .mask .fill {
-  clip: rect(0px, 34px, 68px, 0px);
+  clip: rect(0px, 35px, 69px, 0px);
   background-color: #0290ff;
 }
 
 .circle-wrap .inside-circle {
-  width: 58px;
-  height: 58px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: #ffffff;
   text-align: center;
-  margin-top: 5px;
-  margin-left: 5px;
+  margin-top: 6px;
+  margin-left: 6px;
   position: absolute;
   z-index: 100;
 }
 
 @media (max-width: 1024px) {
+  body {
+    padding: 50px;
+  }
+
   .book-category,
   .book-title,
   .book-author {
