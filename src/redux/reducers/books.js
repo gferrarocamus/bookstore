@@ -9,6 +9,7 @@ const books = (state = initialState, action) => {
         id: uuidv1(),
         title: action.title,
         category: action.category,
+        author: 'Unknown',
       };
       return [...state, book];
     }

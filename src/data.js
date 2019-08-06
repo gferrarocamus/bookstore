@@ -15,15 +15,18 @@ export const initialState = [
     id: uuidv1(),
     title: 'The Great Gatsby',
     category: 'Action',
+    author: 'F. Scott Fitzgerald',
   },
   {
     id: uuidv1(),
     title: 'The Grapes of Wrath',
     category: 'Action',
+    author: 'John Steinbeck',
   },
   {
     id: uuidv1(),
     title: 'Nineteen Eighty-Four',
     category: 'Sci-Fi',
+    author: 'George Orwell',
   },
 ];
