@@ -2,53 +2,70 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Book = props => {
-  const { id, title, author, percentage, category, removeBook } = props;
+  const {
+    id, title, author, percentage, category, removeBook,
+  } = props;
+  const percentageToDegrees = (percentage * 180 / 100);
+  const percentageStyle = {
+    transform: `rotate(${percentageToDegrees}deg)`,
+  };
   return (
     <tr>
-      <td className="book-category">{category}</td>
-      <td className="book-title">{title}</td>
-      <td className="book-author">{author}</td>
-      <td className="action-buttons">
-        <button type="button" className="action-button no-click" disabled>
-          Comments
-        </button>
-        {' | '}
-        <button
-          className="action-button"
-          type="button"
-          onClick={() => {
-            removeBook(id);
-          }}
-        >
-          Remove
-        </button>
-        {' | '}
-        <button className="action-button no-click" type="button" href="#" disabled>
-          Edit
-        </button>
+      <td className="details-container">
+        <h4 className="book-category">{category}</h4>
+        <h2 className="book-title">{title}</h2>
+        <p className="book-author">{author}</p>
+        <div className="action-buttons">
+          <button type="button" className="action-button no-click" disabled>
+            Comments
+          </button>
+          {' | '}
+          <button
+            className="action-button"
+            type="button"
+            onClick={() => {
+              removeBook(id);
+            }}
+          >
+            Remove
+          </button>
+          {' | '}
+          <button className="action-button no-click" type="button" href="#" disabled>
+            Edit
+          </button>
+        </div>
       </td>
       <td className="progress-container">
         <div className="circle">
           <div className="circle-wrap">
             <div className="circle">
-              <div className="mask full">
-                <div className="fill" />
+              <div
+                className="mask"
+                style={percentageStyle}
+              >
+                <div
+                  className="fill"
+                  style={percentageStyle}
+                />
               </div>
-              <div className="mask half">
-                <div className="fill" />
+              <div
+                className="mask half"
+              >
+                <div
+                  className="fill"
+                  style={percentageStyle}
+                />
               </div>
               <div className="inside-circle" />
             </div>
           </div>
         </div>
         <div className="percentage-completed">
-          <h1>
-            {`${percentage}%`}
-          </h1>
+          <h1>{`${percentage}%`}</h1>
           <p>Completed</p>
         </div>
       </td>
-      <td className="update-progresss-container">
+      <td className="update-progress-container">
         <button className="blue-button update-button light" type="button">
           Update Progress
         </button>
@@ -63,7 +80,7 @@ Book.propTypes = {
   author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   removeBook: PropTypes.func.isRequired,
-  percentage: PropTypes.func.isRequired,
+  percentage: PropTypes.string.isRequired,
 };
 
 export default Book;

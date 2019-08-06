@@ -60,11 +60,14 @@ nav {
 
 .books-table tr {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
   background-color: #ffffff;
   margin-bottom: 15px;
-  display: block;
   width: 100%;
   padding: 32px 30px;
 }
@@ -73,7 +76,6 @@ nav {
 .book-title,
 .book-author {
   display: block;
-  max-width: 170px;
 }
 
 .book-category {
@@ -98,12 +100,13 @@ nav {
   line-height: normal;
   letter-spacing: -0.2px;
   color: #121212;
+  margin-bottom: 5px;
 }
 
 .book-author {
   font-family: 'Roboto Slab', serif;
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 500;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -121,22 +124,19 @@ nav {
   letter-spacing: 0.5px;
   text-align: center;
   color: #ffffff;
-  height: 45px;
+  min-height: 45px;
+  min-width: 159px;
   border-radius: 3px;
   background-color: #0290ff;
   text-transform: uppercase;
   border: none;
   padding: 10px 22px;
+  margin-left: 10px;
+  display: inline-block;
 }
 
 button.blue-button:hover {
   opacity: 0.8;
-}
-
-.update-button {
-  position: absolute;
-  top: calc(50% - 22px);
-  right: 30px;
 }
 
 .form-button {
@@ -235,9 +235,6 @@ select {
   align-items: center;
   justify-content: space-evenly;
   width: 200px;
-  position: absolute;
-  top: 0;
-  right: calc(50% - 100px);
 }
 
 .percentage-completed h1 {
@@ -288,33 +285,17 @@ select {
   clip: rect(0px, 34px, 68px, 0px);
   background-color: #0290ff;
 }
-.circle-wrap .circle .mask.full,
-.circle-wrap .circle .fill {
-  animation: fill ease-in-out 3s;
-  transform: rotate(126deg);
-}
-
-@keyframes fill {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(126deg);
-  }
-}
 
 .circle-wrap .inside-circle {
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background: #fff;
+  background: #ffffff;
   text-align: center;
   margin-top: 5px;
   margin-left: 5px;
   position: absolute;
   z-index: 100;
-  font-weight: 700;
-  font-size: 2em;
 }
 
 @media (max-width: 1024px) {
@@ -328,13 +309,8 @@ select {
     margin: 12px auto;
   }
 
-  .progress-container {
-    right: 10px;
-    top: 32px;
-  }
-
   .update-button {
-    top: 130px;
+    padding: 10px 15px;
   }
 }
 
@@ -365,10 +341,11 @@ select {
 
   .progress-container,
   .update-button {
-    position: relative;
-    right: 0;
-    top: 0;
     margin-top: 15px;
+  }
+
+  .books-table tr {
+    flex-direction: column;
   }
 
   tr td {
